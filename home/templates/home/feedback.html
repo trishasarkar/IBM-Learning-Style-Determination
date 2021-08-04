@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>  Preferred Learning Style Determination </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <style media="screen">
+
+        *{
+        margin: 0;
+        padding: 0;
+    }
+    .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+    }
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rate:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+    }
+    .rate:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+
+    /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+    </style>
+    <script>
+      function update1(val) {
+          document.getElementById('score1').innerHTML=val; 
+        }
+    function update2(val) {
+          document.getElementById('score2').innerHTML=val; 
+        }
+    function update3(val) {
+          document.getElementById('score3').innerHTML=val; 
+        }
+    </script>
+
+</head>
+<body>
+    <div class="chat-app-wrapper">
+        <div>
+          <div style="background-color: #525151; top:0;left:0;width:100%; position:relative;height:15px;"></div>
+        </div>
+        <br><br>
+
+        <nav>
+            <div class="nav-left-section">
+                <span id="title"> <img src="static/home/img/ibm-logo.png" width=150px></img> </span>
+                
+            </div>
+        </nav>
+
+        <div class="chat">
+
+
+          <br><br>
+            <div class="container" style="background-color:#F2F9FF">
+                <div class="msg-header" style="position:relative;" >
+                  <span>
+                    <div class="active">
+                        <h5 style = "white-space: nowrap; font-weight: bold;">
+                          Feedback
+                        </h5>
+                    </div>
+                  </span>
+                  <span class="tab">
+                  <span style="align-items:right;">
+                    <div>
+                      <span class="circles" style="background-color: #4BAF7F;" ></span>        
+                      <span class="circles" style="background-color: #F1D46E;" ></span>
+                      <span class="circles" style="background-color: #FF0000;" ></span>
+                    </div>
+                  </span>
+                </div>
+
+                <div class="chat-page">
+                    <div class="msg-inbox">
+                        <div class="chats" id="chats">
+                            <div class="msg-page" id="msg-page">
+                                <div class="loading-message-container" id="loading-message-container" style="display: none;">
+                                    <div class="spinner">
+                                            <svg width="100" height="100" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#003">
+                                                <g fill="none" fill-rule="evenodd">
+                                                  <g transform="translate(1 1)" stroke-width="2">
+                                                    <circle stroke-opacity=".5" cx="18" cy="18" r="18"></circle>
+                                                    <path d="M36 18c0-9.94-8.06-18-18-18">
+                                                      <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"></animateTransform>
+                                                    </path>
+                                                  </g>
+                                                </g>
+                                              </svg>
+                                     </div>
+                                 </div>
+                                
+
+                               <div>
+                                    <div id="group-message-holder" >
+
+<!--  ############################################# -->
+
+
+<!--  ############################################# -->
+<br><br><br>
+<center>
+
+<div class="w3-container" style='width:60%; float:center;'>
+
+  <h2>Let us know how was your experience!</h2><br>
+    <br><br>
+  <form class="" action="{% url 'home:thanks' %}" method="GET">
+    {% csrf_token %}
+  <div style='width:50; float:left;'>
+    1. On a scale of 1-10, how accurate do you think your result is?<br>
+   <br>
+    <div class="form-group row" style='float:center;'>
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+           <input type="range"  class="form-control-range" id="slider1" name="range1" min="0" max="10" value=5
+                      onchange="update1(this.value);">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                             <span  id="score1">5</span>
+                            </div>
+                        </div>
+     </div>                   
+    <br><br>
+    <div style='width:50; float:left;'>
+    2. On a scale of 1-5, how likely are you to recommend us to others?<br>
+   <br>
+    <div class="form-group row" style='float:center;'>
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+           <input type="range"  class="form-control-range" id="slider1" name="range2" min="0" max="10" value=5
+                      onchange="update2(this.value);">
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                             <span  id="score2">5</span>
+                            </div>
+                        </div>
+     </div>
+     <br><br>
+    <div style='width:50; float:left;'>
+   3. On a scale of 1-5,please rate your overall experience with us?<br>
+   <br>
+    <div class="form-group row" style='float:center;'>
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+           <input type="range"  class="form-control-range" id="slider1" name="range3" min="0" max="10" value=5
+                      onchange="update3(this.value);">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                             <span  id="score3">5</span>
+                            </div>
+                        </div>
+     </div>
+     <br><br>
+      <div style='float:left;'>
+    4. Anything you would like us to know? <br>
+   <br>
+      <div class="form-group" style="width:100%,float:center">
+  
+    <textarea class="form-control form-control-lg " name='msg' rows="4" columns = "100" ></textarea>
+</div>
+
+
+    <br><br>
+    
+    <button type="submit" name="button" style="color:#ffffff; width:50%; background: #88B2F0">Submit</button>
+  </form>
+
+  <br><br>
+  {% comment %} <form class="" action="" method="POST">
+    {% csrf_token %}
+
+  <br><br><br>
+    
+    <br><br>
+  </div>
+  </form> {% endcomment %}
+
+</center>
+
+<!--  ############################################# -->
+
+                </div></center>
+
+
+<!--  ############################################# -->
+
+                </div>
+                    </div>
+                                </div>
+                          </div>
+
+                       
+                    </div>
+                </div>
+                <br><br><br><br>
+
+            </div>
+        </div>
+        <footer style="background-color:#525151; top:0; left:0;width:100%; position:relative; height:80px;">
+          <div style="padding-top:18px; text-align:center; line-height: 25px;">
+            <div style="color:white;">Need help? Contact us at placeholder@in.ibm.com</div>
+            <div style="color:white;"> <i class="fas fa-copyright"></i> All rights reserved. IBM India Private Limited.</div>
+          </div>
+
+        </footer>
+    </div>
+
+
+</body></html>
