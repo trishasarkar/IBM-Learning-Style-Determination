@@ -1,4 +1,4 @@
-# Learning Style Determination (by IBM)
+# Preferred Learning Style Determination (by IBM)
 
 ## Project Contribution -
 
