@@ -1,8 +1,8 @@
 # Learning Style Determination (by IBM)
 
-## Project Phase:
+## Project Contribution -
 
-* This project was completed in 2 phases: Phase I by [Anirudh Ambati](https://github.com/anirudhambati), after which it was handed over to [Trisha Sarkar](https://github.com/trishasarkar) to complete Phase II
+This project was completed in 2 phases: Phase I by [Anirudh Ambati](https://github.com/anirudhambati), after which it was handed over to [Trisha Sarkar](https://github.com/trishasarkar) to complete Phase II
 
 ##  Phase II -
 
