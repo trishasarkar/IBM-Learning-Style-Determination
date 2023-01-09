@@ -14,15 +14,17 @@ Create a learning style determination system which can help to understand the le
 Our country uses the age-old ROTE method for delivering student lectures and not much significance is given to learning disabilities or slow learning. If the content is created which is aligned to their learning style, learning is much more effective and faster. At present, none of the learning platforms provides content aligned to Audio or Kinesthetic as it's mostly Visual. Users who are not Visual, find it difficult to learn it effectively and are categorized as slow learners which impacts their overall physic. Our system will help user to determine his/her preferred learning styles using multi-modal learning thru eye movement and user response.
 
 ### Responsibilities:
-  ❖ Front-end (use of HTML, CSS and JavaScript): Redesign the UI and the sliders.
+  ❖ Front-end (use of HTML, CSS and JavaScript): Redesign the UI and the sliders
+  
   ❖ Machine Learning: Create a model for prediction
-  ❖ Integrate the model to the website, such that the website displays both the results.
+  
+  ❖ Integrate the model to the website, such that the website displays both the results
   
 ### Demystification:
 
 A detailed account of the work done in Phase II, as submitted to IBM can be found [here](https://drive.google.com/file/d/1sG_DAa8-muY5gjSO3CO8XeBlIy0zNAaD/view?usp=sharing).
 
-## Phase I -
+## Phase I (by Anirudh) -
 
 * Documentation:
 
